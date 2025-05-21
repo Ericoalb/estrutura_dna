@@ -17,10 +17,10 @@ int main()
     // Declarando minha matriz de string
     char dna[2][101];
 
-    // Cada linha rebe uma string completa, e seu tamanho é definido pelas colunas
+    // Cada linha recebe uma string completa, e seu tamanho é definido pelas colunas
     // dna[2][101];
     //     i   j,  i = linhas e j colunas;
-    // dna[i] = significa que passo reveber até duas entradas de strings
+    // dna[i] = significa que passo receber até duas entradas de strings
     // dna[j] = define otamanho másimo da minha string;
 
     long int maior = 0; 
