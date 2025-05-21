@@ -1,4 +1,4 @@
-#Sobre o Projeto
+# Sobre o Projeto
 
 Realizar um alinhamento de DNA, nessa primeria parte iremos receber duas fitas de dna e na segunte parte receberemos 50 fitas de dna. 
 
