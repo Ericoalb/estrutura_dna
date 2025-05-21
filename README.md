@@ -58,4 +58,4 @@ Dado duas fitas
     
 ### Documentação do código
 
-    [Estrutura mais detalhada do projeto](https://github.com/Ericoalb/estrutura_dna/blob/main/doc.md)
+[acesse a estrutura mais detalhada do projeto](https://github.com/Ericoalb/estrutura_dna/blob/main/doc.md)
