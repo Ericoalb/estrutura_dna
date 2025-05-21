@@ -56,3 +56,6 @@ Dado duas fitas
 
     ps: Os taços sempre serão colocados no inicio 
     
+### Documentação do código
+
+    [Estrutura mais detalhada do projeto](https://github.com/Ericoalb/estrutura_dna/blob/main/doc.md)
