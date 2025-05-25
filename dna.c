@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> 
 #include <string.h>
 #include <stdlib.h>
 #define TAM 2
@@ -24,15 +24,15 @@ int main()
     // dna[j] = define otamanho másimo da minha string;
 
     long int maior = 0; 
-    maior = Entrada(dna);
-    //printf("%ld\n", maior);
-    MoverGap(dna);
-    //InserirTraco(dna);
-    Alinhar(dna, maior);
+    maior = Entrada(dna); // Lendo minha entrada e retornando o tamanho da maior sequência  do dna
     
-    int resul = SomaPeso(dna);
+    MoverGap(dna); // Procuro espaço na fita do dna, caso exista retiramos e inserimos um tracinho na frente
+ 
+    Alinhar(dna, maior); //Alinhamos as duas sequências de dna para ficarem do mesmo tamanho
+    
+    int resul = SomaPeso(dna); //Retorna a soma dos pessos 
 
-    Imprimir(dna, resul);
+    Imprimir(dna, resul); // Imprimo o alinhamento de resultado da soma;
     
 
     return 0;
@@ -63,35 +63,38 @@ long int Entrada(char dna[TAM][101])
 
 void MoverGap(char dna[TAM][101])
 {
+
+    // Função de mover o espaço em branco e inserir '-' no inicio da string;
     char temp[201];
     char auxi[201];
     int j = 0;
-    for (int i = 0; i < TAM; i++)
+
+    for (int i = 0; i < TAM; i++) // Repetição para Percorrer as linhas da matriz
     {
         j = 0;
-        while(dna[i][j] != '\0')
+        while(dna[i][j] != '\0') //Repetição para percorrer as colunas da linha fixada
         {
-            if(dna[i][j] == ' ')
+            if(dna[i][j] == ' ') //caso tenha espaço na sequência de dna
             {
-                strcpy(temp, dna[i]);
-                dna[i][strcspn(dna[i], " ")] = '\0';
+                strcpy(temp, dna[i]); //Copio a string completa para o a string  temp
+                dna[i][strcspn(dna[i], " ")] = '\0'; //Subustituindo o espaço em branco pelo '\0' que indica o final da string
                 
-                int k = 0;
-                int l = j + 1;
+                int k = 0;  // indice da minha string auxiliar
+                int l = j + 1; //salvando o índice no qual queremos copiar
 
-                while(temp[l] != '\0')
+                while(temp[l] != '\0') // percorrendo a sting temp até achar o final da string
                 {
-                    auxi[k] = temp[l];
+                    auxi[k] = temp[l];  //Atribuindo os Caracteres de temp para a string auxiliar
                     
-                    k++, l++;
+                    k++, l++; // incrementando os indices k e l
                 }
-                auxi[k] = '\0';
+                auxi[k] = '\0'; // Informando o final da string
                 
-                strcat(dna[i], auxi);
+                strcat(dna[i], auxi); //Copiando a conteúdo da sting auxi para a matriz dna[i];
 
             }
             
-            j++;
+            j++; // Incrementando J
         }
 
 
@@ -100,14 +103,14 @@ void MoverGap(char dna[TAM][101])
 
 void InserirTraco(char dna[TAM][101])
 {
-    int j;
 
-    for (int i = 0; i < TAM; i++)
+    int j;
+    for (int i = 0; i < TAM; i++)  // Repetição para percorrer as linhas da matriz
     {
         j = 0;
-        while(dna[i][j] != '\0')
+        while(dna[i][j] != '\0') // Percorro a coluna da matriz na qual a linha está fixada
         {
-            if(dna[i][j] == ' ')
+            if(dna[i][j] == ' ')  //Caso seja um espaço em Branco substituo para um '-';
             {
                 dna[i][j] = '-';
             }
