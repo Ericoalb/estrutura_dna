@@ -39,18 +39,18 @@ Em seguida iremos realizar a soma dos pessos (Alpha, Beta e Gama)
 
 Dado duas fitas
 - gg-ta atctaagg
-- gtaatga
+- gt-aatga
 
 ##  
     Primeiro retiramos os espaços e colocamos traços '-'
 
     gg-ta atctaagg   // fita com espaço  
-    -gg-taatctaagg  //  fita sem espaço e com tracinho
+    gt-aatga        //  fita sem espaço e com tracinho
 
     Logo após (alinhamos) compensamos com traços '-' a fita menor para ficar com o mesmo tamanho da maior fita
 
     -gg-taatctaagg
-    -------gtaatga
+    ------gt-aatga
 
     Feito isso realizamos a soma dos pesos
 
