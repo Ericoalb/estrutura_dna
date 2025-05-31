@@ -13,6 +13,26 @@ typedef struct no
 }No;
 
 
+void Entrada(No **lista);
+void Alinhar(No *lista);
+void Imprimir(No *lista);
+long int EncontrarMaior(No *lista);
+int SomaPeso(No *lista);
+
+
+int main()
+{
+    No *dna = NULL;
+
+    Entrada(&dna);
+    Alinhar(dna);
+    printf("\nAlinhamento Multiplo!\n");
+    Imprimir(dna);
+    printf("\nResultado dos Calculos dos Pesos: %d\n", SomaPeso(dna));
+    return 0;
+}
+
+
 void Entrada(No **lista)
 {
     for(int i = 0; i < TAM; i++)
@@ -52,51 +72,6 @@ void Entrada(No **lista)
 
     return;
 
-}
-
-
-void Imprimir(No *lista)
-{
-    if(lista == NULL)
-    {
-        printf("Lista vazia!\n");
-    }
-
-    else
-    {
-        while(lista != NULL)
-        {
-            printf("%s\n", lista->dna);
-            lista = lista->proximo;
-        }
-    }
-}
-
-long int EncontrarMaior(No *lista)
-{
-    long int maior = 0;
-
-    if(lista == NULL)
-    {
-        return 0;
-    }
-
-    else
-    {
-
-        while(lista != NULL)
-        {
-            if(lista->tam > maior)
-            {
-                maior = lista->tam;
-            }
-
-            lista = lista->proximo;
-        }
-    }
-
-
-    return maior;
 }
 
 
@@ -143,6 +118,52 @@ void Alinhar(No *lista)
 }
 
 
+void Imprimir(No *lista)
+{
+    if(lista == NULL)
+    {
+        printf("Lista vazia!\n");
+    }
+
+    else
+    {
+        while(lista != NULL)
+        {
+            printf("%s\n", lista->dna);
+            lista = lista->proximo;
+        }
+    }
+}
+
+
+long int EncontrarMaior(No *lista)
+{
+    long int maior = 0;
+
+    if(lista == NULL)
+    {
+        return 0;
+    }
+
+    else
+    {
+
+        while(lista != NULL)
+        {
+            if(lista->tam > maior)
+            {
+                maior = lista->tam;
+            }
+
+            lista = lista->proximo;
+        }
+    }
+
+
+    return maior;
+}
+
+
 int SomaPeso(No *lista)
 {
     // Pesos para Compração das bases nirogenadas;
@@ -164,10 +185,10 @@ int SomaPeso(No *lista)
     {
         int i = 0;
         No *auxi = lista;
-
+        No *auxi2 = NULL;
         while(lista->dna[i] != '\0')
         {
-            No *auxi2 = auxi;
+            auxi2 = auxi;
 
             while(auxi2 != NULL)
             {
@@ -192,15 +213,4 @@ int SomaPeso(No *lista)
     return resul;
 
     
-}
-int main()
-{
-    No *dna = NULL;
-
-    Entrada(&dna);
-    Alinhar(dna);
-    printf("\nAlinhamento Multiplo!\n");
-    Imprimir(dna);
-    printf("\nResultado dos Calculos dos Pesos: %d\n", SomaPeso(dna));
-    return 0;
 }
