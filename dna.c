@@ -24,6 +24,7 @@ int main()
     // dna[j] = define otamanho másimo da minha string;
 
     long int maior = 0; 
+
     maior = Entrada(dna); // Lendo minha entrada e retornando o tamanho da maior sequência  do dna
     
     MoverGap(dna); // Procuro espaço na fita do dna, caso exista retiramos e inserimos um tracinho na frente
@@ -67,6 +68,7 @@ void MoverGap(char dna[TAM][101])
     // Função de mover o espaço em branco e inserir '-' no inicio da string;
     char temp[201];
     char auxi[201];
+
     int j = 0;
 
     for (int i = 0; i < TAM; i++) // Repetição para Percorrer as linhas da matriz
@@ -172,7 +174,6 @@ int SomaPeso(char dna[TAM][101])
     // Alpha(Se as bases forem iguas, +1)
     // Beta (Se as bases forem diferentes, 0);
     // Gama (Se existe um gap "-" e uma base nirogenada, -1)
-
 
     int a = 0, b = 0, g = 0;
     int resul;
